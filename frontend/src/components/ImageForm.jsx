@@ -27,8 +27,8 @@ const ImageForm = ({ onImageAdded }) => {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="p-6 space-y-4">
-            <div>
+        <form onSubmit={handleSubmit} className="p-6 space-y-4 w-full felx">
+            <div className='w-full'>
                 <label className="block mb-2">Image Name:</label>
                 <input
                     type="text"
