@@ -4,6 +4,8 @@ const cors = require("cors");
 const multer = require("multer");
 const Image = require("./models/Image");
 const path = require("path");
+require("dotenv").config()
+
 
 const app = express();
 app.use(cors());
@@ -13,7 +15,7 @@ app.use("/uploads", express.static("uploads"));
 // Connect to MongoDB
 mongoose
   .connect(
-    `mongodb+srv://boburovshukurullo:gbWBOuoPxotTytyF@cluster0.gym6w.mongodb.net/`,
+    process.env.MONGO_URL,
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
@@ -67,6 +69,6 @@ app.get("/api/images", async (req, res) => {
   }
 });
 
-app.listen(5000, () => {
+app.listen(process.env.PORT, () => {
   console.log("Server running on port 5000");
 });

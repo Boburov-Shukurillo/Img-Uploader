@@ -14,7 +14,7 @@ const ImageForm = ({ onImageAdded }) => {
         formData.append('rating', rating);
 
         try {
-            const res = await axios.post('https://img-uploader-iota.vercel.app/api/images', formData, {
+            const res = await axios.post(import.meta.env.API_URL, formData, {
                 headers: { 'Content-Type': 'multipart/form-data' },
             });
             onImageAdded(res.data);

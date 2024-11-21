@@ -7,7 +7,7 @@ const ImageList = ({ images }) => {
                 <div key={image._id} className="border p-4 rounded">
                     <h2 className="text-xl font-bold">{image.name}</h2>
                     <img
-                        src={`https://img-uploader-iota.vercel.app/${image.imageUrl}`}
+                        src={import.meta.env.API_URL + "/" + image.imageUrl}
                         alt={image.name}
                         className="w-full h-64 object-cover mt-2"
                     />
