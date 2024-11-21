@@ -53,6 +53,10 @@ app.post("/api/images", upload.single("imageFile"), async (req, res) => {
   }
 });
 
+app.get("/hi",(req,res)=>{
+  res.send("hello")
+})
+
 // Get route for retrieving all images
 app.get("/api/images", async (req, res) => {
   try {
