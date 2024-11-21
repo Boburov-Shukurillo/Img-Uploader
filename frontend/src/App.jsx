@@ -8,7 +8,7 @@ const App = () => {
 
   useEffect(() => {
     async function fetchImages() {
-      const res = await axios.get('http://localhost:5000/api/images');
+      const res = await axios.get('https://img-uploader-iota.vercel.app/api/images');
       setImages(res.data);
     }
     fetchImages();
